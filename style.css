@@ -1,97 +1,122 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  min-height: 100vh; /* Makes sure the body takes the full height */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 header {
-  background: #cbc9c9;
-  color: #fff;
-  padding: 10px 0;
-  text-align: center;
-  width: 100%; /* Make sure header spans full width */
+    background: url('grayom-xZzaQ-PwYWc-unsplash.jpg') no-repeat center center;
+    background-size: cover; 
+    color: #ffffff;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-main {
-  width: 100%;
-  max-width: 1200px; /* Set a max-width for centering the content */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+header h1, header h2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin: 0;
 }
 
-h1,
-h2 {
-  color: #333;
-  text-align: center;
+h1, h2 {
+    color: #333;
 }
 
-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+main{
+    padding: 20px;
+}
+
+main section{
+    margin-bottom: 50%;
+}
+
+.team{
+    margin: 0%;
+    padding: auto;
 }
 
 .pdf-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between items */
 }
 
 .pdf-item {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex: 1 1 calc(50% - 20px);
-  max-width: calc(50% - 20px);
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+}
+
+.figma-item {
+    background: #fff;
+    height:340%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+}
+
+.pdf-item h3 {
+    margin-bottom: 10px; /* Space between title and iframe */
 }
 
 iframe {
-  border: none;
-  width: 100%;
-  height: 500px;
+    border: none;
+    width: 100%;
+    height: 500px; /* Default height for iframes */
 }
 
-button {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #4f4f4f;
-  color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+.pdf-item iframe {
+    max-height: auto; /* Limit maximum height */
+    aspect-ratio: 16 / 9; /* Adjust aspect ratio */
 }
 
-button:hover {
-  background-color: #6f6f6f;
-}
-
-@media (max-width: 768px) {
-  .pdf-item {
-    flex: 1 1 calc(100% - 20px);
-    max-width: calc(100% - 20px);
-  }
+.figma-prototype {
+    width: 100%; /* Full width of its parent */
+    height: 500%; /* Allow the height to adjust based on content */
+    max-height: 800px; /* Set a max height to prevent overflow */
+    border: none;/* Remove any default borders */
 }
 
 footer {
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px 0;
-  background: #cbc9c9;
-  color: #fff;
-  width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background: #cbc9c9;
+    color: #fff;
+}
+
+.team-container {
+    bottom: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.team-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .pdf-container {
+        grid-template-columns: 1fr; /* Stack to one column on small screens */
+    }
+
+    .figma-prototype {
+        height: 400px; /* Adjust height for smaller screens */
+    }
 }
